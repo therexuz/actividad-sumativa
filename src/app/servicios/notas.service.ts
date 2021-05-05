@@ -13,4 +13,16 @@ export class NotasService {
   consultar():Observable<any>{
     return this.servicio.get(`${this.servidor}`)
   }
+  
+  agregar(){
+    
+  }
+
+  eliminar(){
+
+  }
+
+  editar(){
+
+  }
 }
