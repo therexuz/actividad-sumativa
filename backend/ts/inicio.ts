@@ -1,20 +1,23 @@
 const express = require('express');
 const app= express();
-
-const hostname ='127.0.0.1'
+const fs=require('fs')
+const cors=require('cors')
+const hostname ='0.0.0.0'
 const port = '3000'
 
-app.use(express.static('src'))
+app.use(cors())
 
 app.get('/',(req:any,res:any)=>{
     
-    let datos=[{
-        id:1,
-        nombre:"pepito",
-        apellidos:"martinez",
-        edad:12
-    }];
-    res.render(datos)
+    fs.readFile('backend/data/notas.json','utf8',(err:any,data:any)=>{
+        if (err){
+            console.log(`Error al leer el archivo:'${err}`);
+            
+        }else{
+            const dataNotas=JSON.parse(data)
+            res.send(dataNotas)
+        }
+    })
 })
 
 app.listen(port,hostname,()=>{
