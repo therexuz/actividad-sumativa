@@ -1,7 +1,5 @@
 <div class="container">
     <form action="">
-    
-    
         <div class="form-group">
             <label for="tituloNota">Titulo</label>
             <input  class="form-control" id="tituloNota" aria-describedby="notaHelp" placeholder="Nota">
@@ -10,7 +8,7 @@
     
           <div class="form-group">
             <label for="formControlSelect">Select</label>
-            <select class="form-control" id="formControlSelect">
+            <select class="form-control form-control-lg" id="formControlSelect">
               <option>Abierto</option>
               <option>En Proceso</option>
               <option>Cerrado</option>
@@ -21,8 +19,7 @@
             <textarea class="form-control" id="formControlTextarea1" rows="4"></textarea>
           </div>
           <div class="container-right">
-            <button type="submit" class="btn btn-primary g">Actualizar</button>
+            <button routerLink="/mis-notas" routerLinkActive="active" type="submit" class="btn btn-primary g">Actualizar</button>
           </div>
-          
     </form>
 </div>

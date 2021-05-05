@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": "AAAA,AAAA,OAAO,CAAC;EACJ,QAAQ,EAAE,KAAK;EACf,MAAM,EAAE,CAAC;EACT,IAAI,EAAE,CAAC;EACP,KAAK,EAAE,CAAC;EACR,MAAM,EAAE,IAAI;CACf;;AACD,AAAA,MAAM,CAAA;EACF,KAAK,EAAE,GAAG;EACV,SAAS,EAAE,KAAK;CACnB",
     "sources": [
         "footer.component.scss"
     ],

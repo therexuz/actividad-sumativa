@@ -5,6 +5,7 @@ import { EditarNOtaComponent } from './editar-nota/editar-nota.component';
 import { MisNotasComponent } from './mis-notas/mis-notas.component';
 
 const routes: Routes = [
+  {path:'',component:CrearNotaComponent},
   {path:'crear-nota',component:CrearNotaComponent},
   {path:'editar-nota',component:EditarNOtaComponent},
   {path:'mis-notas',component:MisNotasComponent}

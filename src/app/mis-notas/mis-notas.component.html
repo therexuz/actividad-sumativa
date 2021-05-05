@@ -1,6 +1,6 @@
 <ul>
     <li *ngFor="let item of listaNotas">
-      <a href="#">
+      <a routerLink="/editar-nota" routerLinkActive="active">
         <h2>{{item.titulo}}</h2>
         <p>{{item.texto}}</p>
       </a>
