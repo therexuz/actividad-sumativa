@@ -1,14 +1,23 @@
-const express = require("express");
-const app = express();
-const cors = require("cors")
-const hostname = '127.0.0.1';
-const port = '3000';
+const express = require('express');
+const app= express();
 
-app.use(cors())
+const hostname ='127.0.0.1'
+const port = '3000'
 
-app.get('/datos',(req:any,res:any)=>{
-    res.send("HOLA MUNDO")
+app.use(express.static('src'))
+
+app.get('/',(req:any,res:any)=>{
+    
+    let datos=[{
+        id:1,
+        nombre:"pepito",
+        apellidos:"martinez",
+        edad:12
+    }];
+    res.render(datos)
 })
 
-app.listen(3000)
+app.listen(port,hostname,()=>{
+    console.log('SERVIDOR CORRIENDO EN http://localhost:'+port);
+})
 

@@ -7,7 +7,8 @@ import {HttpClientModule} from '@angular/common/http';
 import { CrearNotaComponent } from './crear-nota/crear-nota.component';
 import { MisNotasComponent } from './mis-notas/mis-notas.component';
 import { FooterComponent } from './footer/footer.component';
-import { EditarNOtaComponent } from './editar-nota/editar-nota.component'
+import { EditarNOtaComponent } from './editar-nota/editar-nota.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,8 @@ import { EditarNOtaComponent } from './editar-nota/editar-nota.component'
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
