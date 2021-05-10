@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {  FormControl, FormGroup, Validators } from '@angular/forms';
 
-
+import {NotasService} from '../servicios/notas.service'
+import {Notas} from '../interfaces/notas'
+import {FormControl,FormBuilder,FormGroup,Validators} from '@angular/forms'
 @Component({
   selector: 'app-crear-nota',
   templateUrl: './crear-nota.component.html',
@@ -9,7 +10,8 @@ import {  FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class CrearNotaComponent implements OnInit {
 
-
+  constructor(private servicioNotas:NotasService) { }
+  formulario:FormGroup;
   createFormGroup(){
     return new FormGroup({
       titulo:new FormControl('',[Validators.required, Validators.minLength(5)]),
@@ -17,13 +19,11 @@ export class CrearNotaComponent implements OnInit {
       texto:new FormControl('',[Validators.required ]),
     
     });
+    
   }
-  formulario:FormGroup;
- 
-  constructor(){
-    this.formulario =this.createFormGroup();
-  }
+  
   ngOnInit(): void {
+    this.formulario =this.createFormGroup();
   }
   
   ValidarDatos(){
@@ -38,6 +38,9 @@ export class CrearNotaComponent implements OnInit {
     
   }
 
+  crearNota(){
+    this.servicioNotas.agregar()
+  }
 }
 
 

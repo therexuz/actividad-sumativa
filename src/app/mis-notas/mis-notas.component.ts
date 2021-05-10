@@ -1,29 +1,31 @@
 import { Component, OnInit } from '@angular/core';
-import {NotasService} from '../servicios/notas.service'
-import {Notas} from '../interfaces/notas'
+import { NotasService } from '../servicios/notas.service';
+import { Notas } from '../interfaces/notas';
 @Component({
   selector: 'app-mis-notas',
   templateUrl: './mis-notas.component.html',
-  styleUrls: ['./mis-notas.component.scss']
+  styleUrls: ['./mis-notas.component.scss'],
 })
 export class MisNotasComponent implements OnInit {
-  
-  listaNotas:Array<Notas>=[];
+  listaNotas: Array<Notas> = [];
 
-  constructor(private servicioNotas:NotasService) { }
+  constructor(private servicioNotas: NotasService) {}
 
   
 
   ngOnInit(): void {
-    this.servicioNotas.consultar().subscribe(datos=>{
-      for(let i=0;i<datos.length;i++){
-        this.listaNotas.push(datos[i])
+    this.servicioNotas.consultar().subscribe((datos) => {
+      for (let i = 0; i < datos.length; i++) {
+        this.listaNotas.push(datos[i]);
         console.log(datos[i]);
       }
-      
+
       console.log(datos);
+<<<<<<< HEAD
+    });
+=======
 
     })
+>>>>>>> 73acf4502f25f149d565b5b70f78363c6aae5fe3
   }
-
 }
