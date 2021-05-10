@@ -3,5 +3,20 @@
         "titulo":"Tarea 1",
         "estado":"En proceso",
         "texto":"POTO CACA"
+    },
+    {
+        "titulo":"Tarea 2",
+        "estado":"Cerrado",
+        "texto":"Habia un avez un barco shikito"
+    },
+    {
+        "titulo":"Tarea 3",
+        "estado":"En Proceso",
+        "texto":"pegarle a mi mama"
+    },
+    {
+        "titulo":"Tarea 4",
+        "estado":"En Proceso",
+        "texto":"pegarle a mi papa"
     }
 ]
