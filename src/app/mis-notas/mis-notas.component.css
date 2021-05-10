@@ -18,17 +18,26 @@ p {
   font-weight: normal;
 }
 
-ul,
-li {
-  list-style: none;
+.listas {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 10px;
+  -ms-grid-columns: 200px 200px 200px;
+      grid-template-columns: 200px 200px 200px;
+      grid-template-areas: "abierto proceso cerrado";
 }
 
-ul {
-  overflow: hidden;
-  padding: 3em;
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-ul li a {
+.content a {
   text-decoration: none;
   color: #000;
   background: #ffc;
@@ -38,46 +47,51 @@ ul li a {
   padding: 1em;
   -webkit-box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
   box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
+  transition: -webkit-transform 0.15s linear;
+  transition: transform 0.15s linear;
+  transition: transform 0.15s linear, -webkit-transform 0.15s linear;
   -moz-transition: -moz-transform 0.15s linear;
   -o-transition: -o-transform 0.15s linear;
   -webkit-transition: -webkit-transform 0.15s linear;
 }
 
-ul .abierto a {
+#abierto a {
   background: #ff7676;
 }
 
-ul .en-proceso a {
+#en-proceso a {
   background: #fdda7a;
 }
 
-ul .cerrado a {
+#cerrado a {
   background: #5b9aff;
 }
 
-ul li {
+.content {
   margin: 1em;
   float: left;
 }
 
-ul li h2 {
+.content h2 {
   font-size: 140%;
   font-weight: bold;
   padding-bottom: 10px;
 }
 
-ul li p {
+.content p {
   font-family: "Reenie Beanie", arial, sans-serif;
   font-size: 15px;
 }
 
-ul li a {
+.content a {
+  transform: rotate(-6deg);
   -webkit-transform: rotate(-6deg);
   -o-transform: rotate(-6deg);
   -moz-transform: rotate(-6deg);
 }
 
-ul li:nth-child(5n) a {
+.content:nth-child(5n) a {
+  transform: rotate(5deg);
   -o-transform: rotate(5deg);
   -webkit-transform: rotate(5deg);
   -moz-transform: rotate(5deg);
@@ -85,28 +99,16 @@ ul li:nth-child(5n) a {
   top: -10px;
 }
 
-ul li a:hover,
-ul li a:focus {
+.content a:hover,
+.content a:focus {
   box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
   -moz-box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
   -webkit-box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
+  transform: scale(1.25);
   -webkit-transform: scale(1.25);
   -moz-transform: scale(1.25);
   -o-transform: scale(1.25);
   position: relative;
   z-index: 5;
-}
-
-ol {
-  text-align: center;
-}
-
-ol li {
-  display: inline;
-  padding-right: 1em;
-}
-
-ol li a {
-  color: #fff;
 }
 /*# sourceMappingURL=mis-notas.component.css.map */
