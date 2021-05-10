@@ -17,21 +17,23 @@ p {
   font-size: 100%;
   font-weight: normal;
 }
-
+.tasks{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-image:url("../../assets/img/wood-board-background.jpg");
+  background-repeat: repeat-y;
+}
 .listas{
   display: grid;
   grid-gap:10px;
-  grid-template-columns: 200px 200px 200px;
-  grid-template-areas: "abierto proceso cerrado";
-
+  grid-template-columns: 200px 200px 200px ;
+  
 }
 
-.container{
-  display: flex;
-  flex-direction: column;
-}
 
- .content a{
+ .container a{
   text-decoration: none;
   color: #000;
   background: #ffc;
@@ -46,47 +48,55 @@ p {
   -moz-transition: -moz-transform 0.15s linear;
   -o-transition: -o-transform 0.15s linear;
   -webkit-transition: -webkit-transform 0.15s linear;
+  margin: 1em;
 }
 
 #abierto a{
   background: rgb(255, 118, 118);
-  
 }
 
 #en-proceso a{
   background: rgb(253, 218, 122);
+
 
 }
 #cerrado a{
   background: rgb(91, 154, 255);
   
 }
-
-
-.content {
-  margin: 1em;
+.abierto{
+  grid-column: 1;
+}
+.enProceso{
+  grid-column: 2;
+}
+.cerrado{
+  grid-column: 3;
+}
+.container {
+  
   float: left;
 }
 
-.content h2 {
+.container h2 {
   font-size: 140%;
   font-weight: bold;
   padding-bottom: 10px;
 }
 
-.content p {
+.container p {
   font-family: "Reenie Beanie", arial, sans-serif;
   font-size: 15px;
 }
 
-.content a {
+.container a {
   transform: rotate(-6deg);
   -webkit-transform: rotate(-6deg);
   -o-transform: rotate(-6deg);
   -moz-transform: rotate(-6deg);
 }
 
-.content:nth-child(5n) a {
+.container:nth-child(5n) a {
   transform: rotate(5deg);
   -o-transform: rotate(5deg);
   -webkit-transform: rotate(5deg);
@@ -95,8 +105,8 @@ p {
   top: -10px;
 }
 
-.content a:hover,
-.content a:focus {
+.container a:hover,
+.container a:focus {
   box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
   -moz-box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
   -webkit-box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
