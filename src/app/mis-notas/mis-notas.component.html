@@ -1,10 +1,9 @@
 <div class=listas>
-
   <div *ngFor="let item of listaNotas" >
     <div  class="container" *ngIf="item.estado == 'Abierto' ">
       <div id="abierto" class="content">
         <a routerLink="/editar-nota" routerLinkActive="active">
-          <h2>{{item.titulo}}</h2>
+            <h2>{{item.titulo}}</h2>
           <p>{{item.texto}}</p>
         </a>
       </div>
