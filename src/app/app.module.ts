@@ -3,13 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { CrearNotaComponent } from './crear-nota/crear-nota.component';
 import { MisNotasComponent } from './mis-notas/mis-notas.component';
 import { FooterComponent } from './footer/footer.component';
 import { EditarNOtaComponent } from './editar-nota/editar-nota.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 import { NotasService } from './servicios/notas.service';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +23,8 @@ import { NotasService } from './servicios/notas.service';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    ReactiveFormsModule
   ],
   providers: [NotasService],
   bootstrap: [AppComponent]

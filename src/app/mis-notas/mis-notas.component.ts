@@ -17,10 +17,8 @@ export class MisNotasComponent implements OnInit {
     this.servicioNotas.consultar().subscribe((datos) => {
       for (let i = 0; i < datos.length; i++) {
         this.listaNotas.push(datos[i]);
-        console.log(datos[i]);
+     
       }
-
-      console.log(datos);
 
     });
 
