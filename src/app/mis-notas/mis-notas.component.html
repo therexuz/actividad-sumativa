@@ -1,5 +1,17 @@
-<ul>
-    <li *ngFor="let item of listaNotas">
+<ul *ngFor="let item of listaNotas">
+    <li class="abierto" *ngIf="item.estado == 'Abierto' ">
+      <a routerLink="/editar-nota" routerLinkActive="active">
+        <h2>{{item.titulo}}</h2>
+        <p>{{item.texto}}</p>
+      </a>
+    </li>
+    <li class="en-proceso" *ngIf="item.estado == 'En Proceso' ">
+      <a routerLink="/editar-nota" routerLinkActive="active">
+        <h2>{{item.titulo}}</h2>
+        <p>{{item.texto}}</p>
+      </a>
+    </li>
+    <li class="cerrado" *ngIf="item.estado == 'Cerrado' ">
       <a routerLink="/editar-nota" routerLinkActive="active">
         <h2>{{item.titulo}}</h2>
         <p>{{item.texto}}</p>

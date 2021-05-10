@@ -1,7 +1,7 @@
 [
     {
         "titulo":"Tarea 1",
-        "estado":"En proceso",
+        "estado":"En Proceso",
         "texto":"POTO CACA"
     },
     {
@@ -16,7 +16,27 @@
     },
     {
         "titulo":"Tarea 4",
+        "estado":"Abierto",
+        "texto":"pegarle a mi papa"
+    },
+    {
+        "titulo":"Tarea 5",
         "estado":"En Proceso",
+        "texto":"pegarle a mi papa"
+    },
+    {
+        "titulo":"Tarea 6",
+        "estado":"Cerrado",
+        "texto":"pegarle a mi papa"
+    },
+    {
+        "titulo":"Tarea 7",
+        "estado":"Abierto",
+        "texto":"pegarle a mi papa"
+    },
+    {
+        "titulo":"Tarea 8",
+        "estado":"Abierto",
         "texto":"pegarle a mi papa"
     }
 ]
