@@ -1,29 +1,28 @@
-<div class=listas>
-  <div *ngFor="let item of listaNotas" >
-    <div  class="container" *ngIf="item.estado == 'Abierto' ">
-      <div id="abierto" class="content">
+<div class="listas">
+  <div>
+    <div *ngFor="let item of listaNotas" class="container">
+      <div id="abierto" *ngIf="item.estado == 'Abierto'" class="content">
         <a routerLink="/editar-nota" routerLinkActive="active">
-            <h2>{{item.titulo}}</h2>
-          <p>{{item.texto}}</p>
+          <h2>{{ item.titulo }}</h2>
+          <p>{{ item.texto }}</p>
         </a>
       </div>
     </div>
-  <div class="container" *ngIf="item.estado == 'En Proceso'">
-      <div id="en-proceso" class="content">
+    <div *ngFor="let item of listaNotas" class="container">
+      <div id="en-proceso" *ngIf="item.estado == 'En Proceso'" class="content">
         <a routerLink="/editar-nota" routerLinkActive="active">
-          <h2>{{item.titulo}}</h2>
-          <p>{{item.texto}}</p>
+          <h2>{{ item.titulo }}</h2>
+          <p>{{ item.texto }}</p>
         </a>
       </div>
     </div>
-  <div  class="container" *ngIf="item.estado == 'Cerrado'">
-      <div id="cerrado" class="content">
+    <div *ngFor="let item of listaNotas" class="container">
+      <div id="cerrado" *ngIf="item.estado == 'Cerrado'" class="content">
         <a routerLink="/editar-nota" routerLinkActive="active">
-          <h2>{{item.titulo}}</h2>
-          <p>{{item.texto}}</p>
+          <h2>{{ item.titulo }}</h2>
+          <p>{{ item.texto }}</p>
         </a>
       </div>
     </div>
   </div>
-  
 </div>
