@@ -11,6 +11,8 @@ export class MisNotasComponent implements OnInit {
 
   constructor(private servicioNotas: NotasService) {}
 
+  
+
   ngOnInit(): void {
     this.servicioNotas.consultar().subscribe((datos) => {
       for (let i = 0; i < datos.length; i++) {
@@ -19,6 +21,11 @@ export class MisNotasComponent implements OnInit {
       }
 
       console.log(datos);
+<<<<<<< HEAD
     });
+=======
+
+    })
+>>>>>>> 73acf4502f25f149d565b5b70f78363c6aae5fe3
   }
 }
