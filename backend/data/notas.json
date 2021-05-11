@@ -48,6 +48,20 @@
         "titulo":"Tarea 10",
         "estado":"Cerrado",
         "texto":"pegarle a mi papa"
+    },
+    {
+        "titulo":"Tarea 11",
+        "estado":"Cerrado",
+        "texto":"pegarle a mi papa"
+    },
+    {
+        "titulo":"Tarea 12",
+        "estado":"Cerrado",
+        "texto":"pegarle a mi papa"
+    },
+    {
+        "titulo":"Tarea 13",
+        "estado":"Cerrado",
+        "texto":"pegarle a mi papa"
     }
-    
 ]
