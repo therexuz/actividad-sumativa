@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {FormGroup,Validators,FormControl,FormBuilder, FormControlName} from '@angular/forms'
 import {NotasService} from '../servicios/notas.service'
 import {Notas} from '../interfaces/notas'
-import { normalizeSeparators } from '@angular/compiler-cli/src/ngtsc/file_system/src/util';
 @Component({
   selector: 'app-crear-nota',
   templateUrl: './crear-nota.component.html',
@@ -43,5 +42,5 @@ export class CrearNotaComponent implements OnInit {
     
     this.servicio.agregar(notas);
   }
-
 }
+  
