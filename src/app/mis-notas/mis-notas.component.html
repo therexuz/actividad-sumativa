@@ -7,7 +7,7 @@
   <div class="listas">
     <div class="abierto">
       <div *ngFor="let item of listaNotas" class="container" id="abierto">
-        <a *ngIf="item.estado == 'Abierto'" routerLink="/editar-nota" routerLinkActive="active">
+        <a *ngIf="item.estado == 'Abierto'" (click)="editar(item)" >
           <h2>{{ item.titulo }}</h2>
           <p>{{ item.texto }}</p>
         </a>
@@ -15,7 +15,7 @@
     </div>
     <div class="enProceso">
       <div *ngFor="let item of listaNotas" class="container" id="en-proceso">
-        <a *ngIf="item.estado == 'En Proceso'" routerLink="/editar-nota" routerLinkActive="active">
+        <a *ngIf="item.estado == 'En Proceso'" (click)="editar(item)">
           <h2>{{ item.titulo }}</h2>
           <p>{{ item.texto }}</p>
         </a>
@@ -24,7 +24,7 @@
   
     <div class="cerrado">
       <div *ngFor="let item of listaNotas" class="container" id="cerrado"> 
-        <a *ngIf="item.estado == 'Cerrado'" routerLink="/editar-nota" routerLinkActive="active">
+        <a *ngIf="item.estado == 'Cerrado'" (click)="editar(item)">
           <h2>{{ item.titulo }}</h2>
           <p>{{ item.texto }}</p>
         </a>

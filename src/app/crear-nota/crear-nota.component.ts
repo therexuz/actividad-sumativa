@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormGroup,Validators,FormControl,FormBuilder, FormControlName} from '@angular/forms'
 import {NotasService} from '../servicios/notas.service'
 import {Notas} from '../interfaces/notas'
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-crear-nota',
   templateUrl: './crear-nota.component.html',
@@ -11,7 +12,12 @@ export class CrearNotaComponent implements OnInit {
   
   formulario:FormGroup;
   
-  constructor(public fb:FormBuilder,public servicio:NotasService) { 
+  constructor(
+    public fb:FormBuilder,
+    public servicio:NotasService, 
+    private router: Router
+    ) { 
+    
     this.formulario=fb.group({
       titulo: new FormControl('',[Validators.required]),
       estado: new FormControl('',[Validators.required]),
@@ -36,11 +42,9 @@ export class CrearNotaComponent implements OnInit {
       alert("Rellene todos los campos")
       return
     }
-    console.log(notas.titulo);
-    console.log(notas.estado);
-    console.log(notas.texto);
-    
+  
     this.servicio.agregar(notas);
+    this.router.navigate([`/mis-notas`])
   }
 }
   

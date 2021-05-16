@@ -1,4 +1,5 @@
 <div class="container">
+  <h2>Ingrese los datos</h2>
     <form [formGroup]="formulario" method="POST">
         <div class="form-group">
             <label for="tituloNota">Titulo</label>
@@ -18,7 +19,8 @@
             <textarea formControlName="texto" class="form-control" id="formControlTextarea1" rows="4"></textarea>
           </div>
           <div class="container-right">
-            <button routerLink="/mis-notas" routerLinkActive="active" type="submit" (click)="onSubmit()" class="btn btn-primary g">Actualizar</button>
+  
+            <button type="submit" (click)="onSubmit()" class="btn btn-primary g">Actualizar</button>
           </div>
     </form>
 </div>

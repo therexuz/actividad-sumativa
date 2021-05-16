@@ -19,6 +19,7 @@ p {
 }
 
 .tasks {
+  margin-top: 3rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -32,8 +33,9 @@ p {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-image: url("../../assets/img/wood-board-background.jpg");
+  background: rgba(255, 255, 255, 0.603);
   background-repeat: repeat-y;
+  border-radius: 20px;
 }
 
 .listas {

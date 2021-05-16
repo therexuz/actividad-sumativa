@@ -18,12 +18,14 @@ p {
   font-weight: normal;
 }
 .tasks{
+  margin-top: 3rem;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  background-image:url("../../assets/img/wood-board-background.jpg");
+  background:rgba(255, 255, 255, 0.603);
   background-repeat: repeat-y;
+  border-radius: 20px;
 }
 .listas{
   display: grid;

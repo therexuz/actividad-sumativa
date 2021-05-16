@@ -1,10 +1,20 @@
 .container{
+    margin-top: 3rem;
     display: flex;
+    width: 80%;
+    min-width: 350px;
     justify-content: center;
     align-items: center;
+    background:rgba(255, 255, 255, 0.603);
+    border-radius: 20px;
+    flex-direction: column;
 }
 form{
     width: 80%;
+    padding-bottom: 1vh;
+}
+h2{
+    margin-top: 10px;
 }
 .form-group{
     width: 100%;
@@ -13,8 +23,19 @@ form{
 li{
     list-style:none;
 }
+button{
+    width: 150px;
+}
+
 .container-right{
     display: flex;
     justify-content:flex-end ;
     align-items: center;
+    
+}
+@media screen and (max-width: 600px) {
+    .container-right{
+        justify-content:center ;
+
+    }
 }
