@@ -5,6 +5,7 @@ const fs=require('fs')
 const cors=require('cors')
 const hostname ='localhost'
 const port = '3000'
+import {Notas} from './notas'
 
 app.use(cors())
 app.use(bodyParser.urlencoded({extended:false}))
@@ -25,17 +26,22 @@ app.get('/',(req:any,res:any)=>{
 })
 
 app.post('/crear-nota',(req:any,res:any)=>{
-    let nota={
-        titulo:req.body.titulo,
-        estado:req.body.estado,
-        texto:req.body.texto
-    }
+    let actualizarNotas: Array<Notas> = []
 
-    let data = JSON.stringify(nota);
+    fs.readFile('backend/data/notas.json','utf8',(err:any,data:any)=>{
+        if(err)console.log(`Error al leer el archivo:'${err}`);
+        actualizarNotas = JSON.parse(data)
+        const crearNota = actualizarNotas
 
-    fs.writeFile('backend/data/notas.json',data, (err,result)=>{
-        if(err) console.log('error', err);
+        /* notas.push(req.body)
+        console.log(notas);
+        
+        fs.writeFile('backend/data/notas.json',data, (err:any,result:any)=>{
+            if(err) console.log('error', err);
+            
+        })*/
     })
+    
 })
 
 app.listen(port,hostname,()=>{

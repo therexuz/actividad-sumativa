@@ -1,10 +1,11 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
 var fs = require('fs');
 var cors = require('cors');
-var hostname = '0.0.0.0';
+var hostname = 'localhost';
 var port = '3000';
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -23,15 +24,19 @@ app.get('/', function (req, res) {
     });
 });
 app.post('/crear-nota', function (req, res) {
-    var nota = {
-        titulo: req.body.titulo,
-        estado: req.body.estado,
-        texto: req.body.texto
-    };
-    var data = JSON.stringify(nota);
-    fs.writeFile('backend/data/notas.json', data, function (err, result) {
+    var actualizarNotas = [];
+    fs.readFile('backend/data/notas.json', 'utf8', function (err, data) {
         if (err)
-            console.log('error', err);
+            console.log("Error al leer el archivo:'" + err);
+        actualizarNotas = JSON.parse(data);
+        var crearNota = actualizarNotas;
+        /* notas.push(req.body)
+        console.log(notas);
+        
+        fs.writeFile('backend/data/notas.json',data, (err:any,result:any)=>{
+            if(err) console.log('error', err);
+            
+        })*/
     });
 });
 app.listen(port, hostname, function () {

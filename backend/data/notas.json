@@ -1,1 +1,20 @@
-{"titulo":"tareaa","estado":"Abierto","texto":"aaaaaaaaaaaaaaa"}
+{"notas":[
+    {
+        "id":"1",
+        "titulo":"TAREA 1",
+        "estado":"Abierto",
+        "texto":"El kataplan es weko"
+    },
+    {
+        "id":"2",
+        "titulo":"TAREA 2",
+        "estado":"Cerrado",
+        "texto":"El kataplan la maska"
+    },
+    {
+        "id":"3",
+        "titulo":"TAREA 3",
+        "estado":"En Proceso",
+        "texto":"El kataplan es weko"
+    }
+]}
