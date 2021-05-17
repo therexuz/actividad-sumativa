@@ -11,6 +11,7 @@ export class MisNotasComponent implements OnInit {
   constructor(public servicioNotas: NotasService, private router: Router) {}
 
   editar(id: number) {
+    this.servicioNotas.notaEditar = this.servicioNotas.listaNotas[(id) -1];
     this.router.navigate([`/editar-nota/`]);
   }
   ngOnInit(): void {

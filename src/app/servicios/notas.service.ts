@@ -8,7 +8,13 @@ import { Notas } from '../interfaces/notas';
 export class NotasService {
   servidor = 'http://localhost:3000/';
   listaNotas: Array<Notas> = [];
-  constructor(private servicio: HttpClient) {}
+  notaEditar:Notas = this.listaNotas[0];
+  
+  constructor(private servicio: HttpClient) {
+
+    
+  }
+  
 
   consultar(): Observable<any> {
     this.listaNotas = [];
