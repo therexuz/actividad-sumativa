@@ -24,19 +24,17 @@ app.get('/', function (req, res) {
     });
 });
 app.post('/crear-nota', function (req, res) {
-    var actualizarNotas = [];
     fs.readFile('backend/data/notas.json', 'utf8', function (err, data) {
-        if (err)
+        if (err) {
             console.log("Error al leer el archivo:'" + err);
-        actualizarNotas = JSON.parse(data);
-        var crearNota = actualizarNotas;
-        /* notas.push(req.body)
-            console.log(notas);
-            
-            fs.writeFile('backend/data/notas.json',data, (err:any,result:any)=>{
-                if(err) console.log('error', err);
-                
-            })*/
+        }
+        else {
+            var nuevaNota = req.body;
+            var dataNotas = data;
+            dataNotas.notas.push(nuevaNota);
+            //let dataNotasJson = JSON.stringify(dataNotas)
+            //fs.writeFileSync('backend/data/notas.json',dataNotas)
+        }
     });
 });
 app.listen(port, hostname, function () {
