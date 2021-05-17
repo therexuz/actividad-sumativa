@@ -6,15 +6,11 @@ import { Notas } from '../interfaces/notas';
   providedIn: 'root',
 })
 export class NotasService {
-  servidor = 'http://localhost:3000/';
+  servidor = 'http://181.74.103.3:3000/';
   listaNotas: Array<Notas> = [];
-  notaEditar:Notas = this.listaNotas[0];
-  
-  constructor(private servicio: HttpClient) {
+  notaEditar: Notas = this.listaNotas[0];
 
-    
-  }
-  
+  constructor(private servicio: HttpClient) {}
 
   consultar(): Observable<any> {
     this.listaNotas = [];
@@ -23,7 +19,7 @@ export class NotasService {
 
   agregar(data: Notas) {
     return this.servicio
-      .post('http://localhost:3000/crear-nota', data)
+      .post('http://181.74.103.3:3000/crear-nota', data)
       .subscribe(
         (response) => console.log(response),
         (error) => console.log(error)
@@ -32,7 +28,7 @@ export class NotasService {
 
   eliminar(data: Notas) {
     return this.servicio
-      .post('http://localhost:3000/eliminar-nota', data)
+      .post('http://181.74.103.3:3000/eliminar-nota', data)
       .subscribe(
         (response) => console.log(response),
         (error) => console.log(error)
@@ -41,7 +37,7 @@ export class NotasService {
 
   editar(data: Notas) {
     return this.servicio
-      .post('http://localhost:3000/editar-nota', data)
+      .post('http://181.74.103.3:3000/editar-nota', data)
       .subscribe(
         (response) => console.log(response),
         (error) => console.log(error)
