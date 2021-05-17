@@ -43,9 +43,12 @@ export class CrearNotaComponent implements OnInit {
       alert("Rellene todos los campos")
       return
     }
-  
+    
     this.servicio.agregar(notas);
-    this.router.navigate([`/mis-notas`])
+    this.servicio.consultar()
+    this.router.navigate([`/mis-notas`]).then(()=>{
+      window.location.reload();
+    })
   }
 }
   
