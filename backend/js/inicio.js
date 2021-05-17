@@ -31,12 +31,12 @@ app.post('/crear-nota', function (req, res) {
         actualizarNotas = JSON.parse(data);
         var crearNota = actualizarNotas;
         /* notas.push(req.body)
-        console.log(notas);
-        
-        fs.writeFile('backend/data/notas.json',data, (err:any,result:any)=>{
-            if(err) console.log('error', err);
+            console.log(notas);
             
-        })*/
+            fs.writeFile('backend/data/notas.json',data, (err:any,result:any)=>{
+                if(err) console.log('error', err);
+                
+            })*/
     });
 });
 app.listen(port, hostname, function () {
