@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const app = express();
 const fs = require('fs');
 const cors = require('cors');
-const hostname = 'localhost';
+const hostname = '0.0.0.0';
 const port = '3000';
 import { Notas } from './notas';
 
@@ -25,19 +25,31 @@ app.get('/', (req: any, res: any) => {
 });
 
 app.post('/crear-nota', (req: any, res: any) => {
-    fs.readFile('backend/data/notas.json', 'utf8', (err: any, data: any) => {
-        if (err) {
-            console.log(`Error al leer el archivo:'${err}`);
-        } else {
-            const nuevaNota:Notas = req.body;
-            const dataNotas= <Array<Notas>>data;
-            dataNotas.notas.push(nuevaNota)
-
-           //let dataNotasJson = JSON.stringify(dataNotas)
+    
+  fs.readFile('backend/data/notas.json', 'utf8', (err: any, data: any) => {
+    if (err) {
+      console.log(`Error al leer el archivo:'${err}`);
+      res.status(500).json({'message':'ERROR EN EL SERVIDOR'})
+    } else {
+            
+      const notas= JSON.parse(data)
+      const nuevaNota = req.body;
+      const notes:Array<Notas>=notas.notas
+      notes.push(nuevaNota)
+          
+      fs.writeFile('backend/data/notas.json',JSON.stringify({notas:notes}) ,'utf8',(err:any)=>{
         
-            //fs.writeFileSync('backend/data/notas.json',dataNotas)
+        if(err){
+          return console.log(err)
         }
-    });
+          console.log("ARCHIVO GUARDADO");
+
+        }
+      )
+      
+      res.status(201).json({'message':'TAREA CREADA CON EXITO'})
+    }
+  });
 });
 
 app.listen(port, hostname, () => {
