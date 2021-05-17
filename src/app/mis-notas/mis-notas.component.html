@@ -1,37 +1,36 @@
-<div class="tasks">
-  <div>
-    <h1>
-      Tareas
-    </h1>
-  </div>
-  <div class="listas">
-    <div class="abierto">
-      <div *ngFor="let item of servicioNotas.listaNotas" class="container" id="abierto">
-        <a *ngIf="item.estado == 'Abierto'" (click)="editar(item.id)" >
-          <h2>{{ item.titulo }}</h2>
-          <p>{{ item.texto }}</p>
-        </a>
-      </div>
+<div class="task-container">
+  <div class="tasks">
+    <div>
+      <h1>
+        Tareas
+      </h1>
     </div>
-    <div class="enProceso">
-      <div *ngFor="let item of servicioNotas.listaNotas" class="container" id="en-proceso">
-        <a *ngIf="item.estado == 'En Proceso'" (click)="editar(item.id)">
-          <h2>{{ item.titulo }}</h2>
-          <p>{{ item.texto }}</p>
-        </a>
+    <div class="listas">
+      <div class="abierto">
+        <div *ngFor="let item of servicioNotas.listaNotas" class="container" id="abierto">
+          <a *ngIf="item.estado == 'Abierto'" (click)="editar(item.id)" >
+            <h2>{{ item.titulo }}</h2>
+            <p>{{ item.texto }}</p>
+          </a>
+        </div>
       </div>
-    </div>
-  
-    <div class="cerrado">
-      <div *ngFor="let item of servicioNotas.listaNotas" class="container" id="cerrado"> 
-        <a *ngIf="item.estado == 'Cerrado'" (click)="editar(item.id)">
-          <h2>{{ item.titulo }}</h2>
-          <p>{{ item.texto }}</p>
-        </a>
+      <div class="enProceso">
+        <div *ngFor="let item of servicioNotas.listaNotas" class="container" id="en-proceso">
+          <a *ngIf="item.estado == 'En Proceso'" (click)="editar(item.id)">
+            <h2>{{ item.titulo }}</h2>
+            <p>{{ item.texto }}</p>
+          </a>
+        </div>
       </div>
-    </div>
-</div>
-
     
-  
+      <div class="cerrado">
+        <div *ngFor="let item of servicioNotas.listaNotas" class="container" id="cerrado"> 
+          <a *ngIf="item.estado == 'Cerrado'" (click)="editar(item.id)">
+            <h2>{{ item.titulo }}</h2>
+            <p>{{ item.texto }}</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

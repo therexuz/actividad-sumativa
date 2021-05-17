@@ -17,21 +17,27 @@ p {
   font-size: 100%;
   font-weight: normal;
 }
+.task-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .tasks{
   margin-top: 3rem;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  background:rgba(255, 255, 255, 0.603);
-  background-repeat: repeat-y;
+  background:rgba(255, 255, 255, 0.603) repeat-y;
   border-radius: 20px;
+  width: 70%;
+  min-width: 650px;
 }
 .listas{
   display: grid;
   grid-gap:10px;
   grid-template-columns: 200px 200px 200px ;
-  
+  grid-auto-flow: column;
 }
 
 
