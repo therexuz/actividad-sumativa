@@ -22,10 +22,13 @@ export class MisNotasComponent implements OnInit {
   }
   ngOnInit(): void {
     this.servicioNotas.consultar().subscribe((datos) => {
-      for (let i = 0; i < datos.length; i++) {
-        this.servicioNotas.listaNotas.push(datos[i]);
-      }
-    });
+      //console.log(datos);
+      datos.notas.forEach((element:any) => {
+        this.servicioNotas.listaNotas.push(element);
+      });
+      
+   
+   });
 
   }
 }

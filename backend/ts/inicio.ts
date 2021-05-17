@@ -19,7 +19,8 @@ app.get('/',(req:any,res:any)=>{
         if (err){
             console.log(`Error al leer el archivo:'${err}`);
         }else{
-            const dataNotas=JSON.parse(data)
+            const dataNotas:Array <Notas> = JSON.parse(data)
+            
             res.send(dataNotas)
         }
     })
