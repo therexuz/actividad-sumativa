@@ -43,8 +43,11 @@ export class EditarNOtaComponent implements OnInit {
       alert('Rellene todos los campos');
       return;
     }
-
-    //this.servicio.editar(notas);
+    this.servicio.notaEditar.titulo = this.formulario.controls['inputTitulo'].value;
+    this.servicio.notaEditar.estado = this.formulario.controls['inputEstado'].value;
+    this.servicio.notaEditar.texto = this.formulario.controls['inputTexto'].value;
+    console.log(this.servicio.notaEditar);
+    this.servicio.editar(this.servicio.notaEditar);
     this.router.navigate([`/mis-notas`]);
   }
 }
