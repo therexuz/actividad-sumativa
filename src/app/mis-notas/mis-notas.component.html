@@ -7,7 +7,7 @@
       
       <div id="col-abierto" class="columna">
         <h4>Abierto</h4>
-        <div>
+        <div class="notas">
           <div
           *ngFor="let item of servicioNotas.listaNotas"
           class="container"
@@ -20,31 +20,36 @@
           </div>
         </div>
       </div>
+
       <div id="col-enProceso"  class="columna">
         <h4>En proceso</h4>
-        <div
-          *ngFor="let item of servicioNotas.listaNotas"
-          class="container"
-          id="en-proceso"
-        >
-          <a *ngIf="item.estado == 'En Proceso'" (click)="editar(item.id)">
-            <h2>{{ item.titulo }}</h2>
-            <p>{{ item.texto }}</p>
-          </a>
+        <div class="notas">
+          <div
+            *ngFor="let item of servicioNotas.listaNotas"
+            class="container"
+            id="en-proceso"
+          >
+            <a *ngIf="item.estado == 'En Proceso'" (click)="editar(item.id)">
+              <h2>{{ item.titulo }}</h2>
+              <p>{{ item.texto }}</p>
+            </a>
+          </div>
         </div>
       </div>
 
       <div id="col-cerrado "class="columna">
         <h4>Cerrado</h4>
-        <div
-          *ngFor="let item of servicioNotas.listaNotas"
-          class="container"
-          id="cerrado"
-        >
-          <a *ngIf="item.estado == 'Cerrado'" (click)="editar(item.id)">
-            <h2>{{ item.titulo }}</h2>
-            <p>{{ item.texto }}</p>
-          </a>
+        <div class="notas">
+          <div
+            *ngFor="let item of servicioNotas.listaNotas"
+            class="container"
+            id="cerrado"
+            >
+            <a *ngIf="item.estado == 'Cerrado'" (click)="editar(item.id)">
+              <h2>{{ item.titulo }}</h2>
+              <p>{{ item.texto }}</p>
+            </a>
+          </div>
         </div>
       </div>
     </div>
