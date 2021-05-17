@@ -11,6 +11,7 @@ export class NotasService {
   constructor(private servicio: HttpClient) {}
 
   consultar(): Observable<any> {
+    this.listaNotas = [];
     return this.servicio.get(`${this.servidor}`);
   }
 

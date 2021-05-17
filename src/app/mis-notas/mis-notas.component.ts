@@ -11,11 +11,13 @@ export class MisNotasComponent implements OnInit {
   constructor(public servicioNotas: NotasService, private router: Router) {}
 
   editar(id: number) {
-    this.router.navigate([`/editar-nota/${id}`]);
+    this.router.navigate([`/editar-nota/`]);
   }
   ngOnInit(): void {
-    this.servicioNotas.consultar().subscribe((datos) => {
+   
+    this.servicioNotas.consultar().subscribe((datos) => {  
       datos.notas.forEach((element: any) => {
+        
         this.servicioNotas.listaNotas.push(element);
       });
     });
