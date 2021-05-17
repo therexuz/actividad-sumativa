@@ -23,7 +23,7 @@ export class CrearNotaComponent implements OnInit {
       estado: new FormControl('',[Validators.required]),
       texto: new FormControl('',[Validators.required])
     })
-  
+    
   }
   
   ngOnInit(): void {
@@ -33,6 +33,7 @@ export class CrearNotaComponent implements OnInit {
   onSubmit(){
 
     const notas:Notas={
+      id:this.servicio.setId(),
       titulo:this.formulario.controls['titulo'].value,
       estado:this.formulario.controls['estado'].value,
       texto:this.formulario.controls['texto'].value

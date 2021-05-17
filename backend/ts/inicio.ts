@@ -3,7 +3,7 @@ const bodyParser = require('body-parser')
 const app= express();
 const fs=require('fs')
 const cors=require('cors')
-const hostname ='0.0.0.0'
+const hostname ='localhost'
 const port = '3000'
 
 app.use(cors())

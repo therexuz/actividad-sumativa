@@ -8,20 +8,22 @@ import { Router } from '@angular/router';
   styleUrls: ['./mis-notas.component.scss'],
 })
 export class MisNotasComponent implements OnInit {
-  listaNotas: Array<Notas> = [];
+  
 
   constructor(
-    private servicioNotas: NotasService,
+    public servicioNotas: NotasService,
     private router: Router,
+  
     
     ){}
-  editar(item:Notas){
-    this.router.navigate([`/editar-nota`])
+    
+  editar(id:number){
+    this.router.navigate([`/editar-nota/${id}`])
   }
   ngOnInit(): void {
     this.servicioNotas.consultar().subscribe((datos) => {
       for (let i = 0; i < datos.length; i++) {
-        this.listaNotas.push(datos[i]);
+        this.servicioNotas.listaNotas.push(datos[i]);
       }
     });
 
