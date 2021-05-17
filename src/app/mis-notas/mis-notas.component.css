@@ -58,8 +58,8 @@ p {
 .listas {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(180px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  -ms-grid-columns: (minmax(200px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 15px;
   width: 90%;
 }
