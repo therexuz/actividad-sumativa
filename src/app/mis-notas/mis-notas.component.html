@@ -13,7 +13,7 @@
           class="container"
           id="abierto"
           >
-            <a *ngIf="item.estado == 'Abierto'" (click)="editar(item.id)">
+            <a *ngIf="item.estado == 'Abierto'" (click)="editar(item)">
               <h2>{{ item.titulo }}</h2>
               <p>{{ item.texto }}</p>
             </a>
@@ -29,7 +29,7 @@
             class="container"
             id="en-proceso"
           >
-            <a *ngIf="item.estado == 'En Proceso'" (click)="editar(item.id)">
+            <a *ngIf="item.estado == 'En Proceso'" (click)="editar(item)">
               <h2>{{ item.titulo }}</h2>
               <p>{{ item.texto }}</p>
             </a>
@@ -45,7 +45,7 @@
             class="container"
             id="cerrado"
             >
-            <a *ngIf="item.estado == 'Cerrado'" (click)="editar(item.id)">
+            <a *ngIf="item.estado == 'Cerrado'" (click)="editar(item)">
               <h2>{{ item.titulo }}</h2>
               <p>{{ item.texto }}</p>
             </a>

@@ -1,5 +1,5 @@
 export interface Notas {
-    id:number,
+    id:string,
     titulo:string,
     estado:string,
     texto:string

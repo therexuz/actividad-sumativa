@@ -27,7 +27,7 @@ app.post('/crear-nota', function (req, res) {
     fs.readFile('backend/data/notas.json', 'utf8', function (err, data) {
         if (err) {
             console.log("Error al leer el archivo:'" + err);
-            res.status(500).json({ 'message': 'ERROR EN EL SERVIDOR' });
+            res.status(500).json({ message: 'ERROR EN EL SERVIDOR' });
         }
         else {
             var notas = JSON.parse(data);
@@ -38,12 +38,58 @@ app.post('/crear-nota', function (req, res) {
                 if (err) {
                     return console.log(err);
                 }
-                console.log("ARCHIVO GUARDADO");
+                console.log('NOTA CREADA CON EXITO');
             });
-            res.status(201).json({ 'message': 'TAREA CREADA CON EXITO' });
+            res.status(201).json({ message: 'TAREA CREADA CON EXITO' });
+        }
+    });
+});
+app.post('/editar-nota', function (req, res) {
+    fs.readFile('backend/data/notas.json', 'utf8', function (err, data) {
+        if (err) {
+            console.log("Error al leer el archivo:'" + err);
+            res.status(500).json({ message: 'ERROR EN EL SERVIDOR' });
+        }
+        else {
+            var notas = JSON.parse(data);
+            var notaEditada_1 = req.body;
+            var notes = notas.notas;
+            var index = notes.findIndex(function (item) { return item.id === notaEditada_1.id; });
+            notes[index] = notaEditada_1;
+            console.log(notes);
+            fs.writeFile('backend/data/notas.json', JSON.stringify({ notas: notes }), 'utf8', function (err) {
+                if (err) {
+                    return console.log(err);
+                }
+                console.log('NOTA EDITADA CON EXITO');
+            });
+        }
+        res.status(201).json({ 'message': 'TAREA CREADA CON EXITO' });
+    });
+});
+app.post('/eliminar-nota', function (req, res) {
+    fs.readFile('backend/data/notas.json', 'utf8', function (err, data) {
+        if (err) {
+            console.log("Error al leer el archivo:'" + err);
+            res.status(500).json({ message: 'ERROR EN EL SERVIDOR' });
+        }
+        else {
+            var notas = JSON.parse(data);
+            var notaEliminar_1 = req.body;
+            var notes = notas.notas;
+            var index = notes.findIndex(function (item) { return item.id === notaEliminar_1.id; });
+            console.log(index);
+            notes.splice(index, 1);
+            fs.writeFile('backend/data/notas.json', JSON.stringify({ notas: notes }), 'utf8', function (err) {
+                if (err) {
+                    return console.log(err);
+                }
+                console.log('NOTA ELIMINADA');
+            });
+            res.status(201).json({ message: 'TAREA ELIMINADA CON EXITO' });
         }
     });
 });
 app.listen(port, hostname, function () {
-    console.log('SERVIDOR CORRIENDO EN http://localhost:' + port);
+    console.log('SERVIDOR CORRIENDO EN http://181.74.103.3:3000' + port);
 });

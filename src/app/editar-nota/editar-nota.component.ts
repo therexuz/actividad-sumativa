@@ -34,20 +34,29 @@ export class EditarNOtaComponent implements OnInit {
   ngOnInit(): void {
     console.log(this.servicio.notaEditar)
   }
+  
   eliminar() {
     // this.servicio.eliminar(notas);
-    this.router.navigate([`/mis-notas`]);
+    this.servicio.eliminar(this.servicio.notaEditar);
+    this.router.navigate([`/mis-notas`]).then(()=>{
+      window.location.reload();
+    });;
   }
+  
   actualizar() {
+    
     if (!this.formulario.valid) {
       alert('Rellene todos los campos');
       return;
     }
+    
     this.servicio.notaEditar.titulo = this.formulario.controls['inputTitulo'].value;
     this.servicio.notaEditar.estado = this.formulario.controls['inputEstado'].value;
     this.servicio.notaEditar.texto = this.formulario.controls['inputTexto'].value;
-    console.log(this.servicio.notaEditar);
+    
     this.servicio.editar(this.servicio.notaEditar);
-    this.router.navigate([`/mis-notas`]);
+    this.router.navigate([`/mis-notas`]).then(()=>{
+      window.location.reload();
+    });
   }
 }
