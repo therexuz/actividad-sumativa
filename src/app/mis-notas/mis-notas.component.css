@@ -21,6 +21,7 @@ h2,
 p {
   font-size: 100%;
   font-weight: normal;
+  overflow-wrap: break-word;
 }
 
 .task-container {
@@ -58,8 +59,8 @@ p {
 .listas {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(200px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  -ms-grid-columns: (minmax(13em, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(13em, 1fr));
   grid-gap: 15px;
   width: 90%;
 }
@@ -69,8 +70,8 @@ p {
   color: #000;
   background: #ffc;
   display: block;
-  min-height: 13em;
-  width: 13em;
+  min-height: 14em;
+  width: 14em;
   padding: 1em;
   -webkit-box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
   box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
