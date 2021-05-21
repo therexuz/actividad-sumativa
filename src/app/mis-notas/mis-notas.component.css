@@ -59,8 +59,8 @@ p {
 .listas {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(13em, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(13em, 1fr));
+  -ms-grid-columns: (minmax(14em, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(14em, 1fr));
   grid-gap: 15px;
   width: 90%;
 }

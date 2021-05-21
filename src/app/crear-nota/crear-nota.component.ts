@@ -40,7 +40,7 @@ export class CrearNotaComponent implements OnInit {
     };
 
     if(!this.formulario.valid){
-      alert("Rellene todos los campos")
+      alert("Rellene correctamente todos los campos")
       return
     }
     
@@ -49,6 +49,14 @@ export class CrearNotaComponent implements OnInit {
     this.router.navigate([`/mis-notas`]).then(()=>{
       window.location.reload();
     })
+  }
+  numberOfCharacters1 = 0;
+  onKeyUp(event: any): void {
+    this.numberOfCharacters1 = event.target.value.length;
+    if (this.numberOfCharacters1 > 150) {
+      event.target.value = event.target.value.slice(0, 150);
+      this.numberOfCharacters1 = 150;
+    }
   }
 }
   
