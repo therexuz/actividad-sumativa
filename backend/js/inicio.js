@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 var app = express();
 var fs = require('fs');
 var cors = require('cors');
-var hostname = '0.0.0.0';
+var hostname = 'localhost';
 var port = '3000';
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -91,5 +91,5 @@ app.post('/eliminar-nota', function (req, res) {
     });
 });
 app.listen(port, hostname, function () {
-    console.log('SERVIDOR CORRIENDO EN http://181.74.103.3:3000' + port);
+    console.log('SERVIDOR CORRIENDO EN http://localhost:' + port);
 });

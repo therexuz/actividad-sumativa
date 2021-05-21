@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const app = express();
 const fs = require('fs');
 const cors = require('cors');
-const hostname = '0.0.0.0';
+const hostname = 'localhost';
 const port = '3000';
 import { Notas } from './notas';
 
@@ -116,5 +116,5 @@ app.post('/eliminar-nota', (req: any, res: any) => {
 });
 
 app.listen(port, hostname, () => {
-  console.log('SERVIDOR CORRIENDO EN http://181.74.103.3:3000' + port);
+  console.log('SERVIDOR CORRIENDO EN http://localhost:' + port);
 });
