@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class CrearNotaComponent implements OnInit {
   
   formulario:FormGroup;
+  numberOfCharacters1 = 0;
   
   constructor(
     public fb:FormBuilder,
@@ -50,7 +51,7 @@ export class CrearNotaComponent implements OnInit {
       window.location.reload();
     })
   }
-  numberOfCharacters1 = 0;
+  
   onKeyUp(event: any): void {
     this.numberOfCharacters1 = event.target.value.length;
     if (this.numberOfCharacters1 > 150) {
