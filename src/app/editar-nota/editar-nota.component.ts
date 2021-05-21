@@ -7,7 +7,6 @@ import {
 } from '@angular/forms';
 import { NotasService } from '../servicios/notas.service';
 import { Router } from '@angular/router';
-import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-editar-nota',
@@ -15,11 +14,8 @@ import { BehaviorSubject } from 'rxjs';
   styleUrls: ['./editar-nota.component.scss'],
 })
 export class EditarNOtaComponent implements OnInit {
-  
-
-  
   formulario: FormGroup;
-
+  numberOfCharacters1 = 0;
   constructor(
     public fb: FormBuilder,
     public servicio: NotasService,
@@ -41,11 +37,14 @@ export class EditarNOtaComponent implements OnInit {
       this.formulario.controls['inputTexto'].disable();
     }
     
+    let contador:string = this.formulario.controls['inputTexto'].value
+    this.numberOfCharacters1 = contador.length
+    console.log(this.numberOfCharacters1);
     
   }
   
   eliminar() {
-    // this.servicio.eliminar(notas);
+    
     this.servicio.eliminar(this.servicio.notaEditar);
     this.router.navigate([`/mis-notas`]).then(()=>{
       window.location.reload();
@@ -69,7 +68,7 @@ export class EditarNOtaComponent implements OnInit {
     });
   }
 
-  numberOfCharacters1 = 0;
+  
   onKeyUp(event: any): void {
     const div = document.getElementById("charCounter");
     this.numberOfCharacters1 = event.target.value.length;
