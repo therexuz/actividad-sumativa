@@ -21,7 +21,7 @@ export class CrearNotaComponent implements OnInit {
     this.formulario=fb.group({
       titulo: new FormControl('',[Validators.required]),
       estado: new FormControl('',[Validators.required]),
-      texto: new FormControl('',[Validators.required])
+      texto: new FormControl('',[Validators.required,Validators.maxLength(150)])
     })
     
   }

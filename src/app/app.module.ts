@@ -10,7 +10,9 @@ import { FooterComponent } from './footer/footer.component';
 import { EditarNOtaComponent } from './editar-nota/editar-nota.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 import { NotasService } from './servicios/notas.service';
-import {ReactiveFormsModule,FormsModule} from '@angular/forms'
+import {ReactiveFormsModule,FormsModule} from '@angular/forms';
+
+
 @NgModule({
   declarations: [
     AppComponent,
